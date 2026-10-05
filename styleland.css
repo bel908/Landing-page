@@ -1,0 +1,218 @@
+/* Reset + Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #3e2c23; background: #fdfaf6; }
+
+/* Navigation */
+nav {
+  position: sticky; top: 0;
+  background: #3e2c23; color: #fff;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; z-index: 1000;
+}
+nav ul { list-style: none; display: flex; gap: 1.5rem; }
+nav a { color: #fff; text-decoration: none; font-weight: 600; }
+
+/* Hero */
+.hero {
+  background: url('https://media.istockphoto.com/id/1467739359/photo/cup-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.webp?b=1&s=612x612&w=0&k=20&c=asoR7HmPKbQWtY26exR0ZfIYwtsbXVprJmYSIV-oGIs=') center/cover no-repeat;
+  height: 90vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  color: #fff; padding: 0 1rem;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 1rem; }
+.hero button {
+  background: #c49a6c; border: none; padding: 0.8rem 1.5rem;
+  font-size: 1rem; font-weight: 600; cursor: pointer; border-radius: 5px;
+}
+
+/* Sections */
+section { padding: 4rem 2rem; text-align: center; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.features div {
+  background: #fff; padding: 2rem; border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.features img { width: 80px; margin-bottom: 1rem; }
+
+.about { background: #f3e9e0; border-radius: 8px; }
+.about p { max-width: 600px; margin: auto; }
+
+/* Footer */
+footer {
+  background: #3e2c23; color: #fff; text-align: center;
+  padding: 2rem 1rem; margin-top: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+
+}
+footer a { color: #c49a6c; margin: 0 0.5rem; text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+}
+
+/* Contact Section */
+.contact {
+  background: #f3e9e0;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.contact form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact input, .contact textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+.contact button {
+  color: rgb(254, 251, 251);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  background: #c49a6c;
+  border: none;
+  padding: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem; margin-top: 2rem;
+}
+.gallery-grid img { width: 100%; border-radius: 8px; }
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* keeps them proportional */
+  object-fit: cover;
+  border-radius: 8px;
+}
+ section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
+section:nth-of-type(5) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero button, .contact button {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.hero button:hover, .contact button:hover {
+  transform: scale(1.05);
+  background: #a67c52;
+}
+.gallery-grid img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+nav a {
+  position: relative;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -5px;
+  width: 0; height: 2px;
+  background: #c49a6c;
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+.hero {
+  background-attachment: fixed;
+}
+
+h1{
+  font-family: 'Times New Roman', Times, serif;
+}
+h3{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+}
+h2:hover {
+  color: #744e23;
+  text-shadow: 0 0 10px #c49a6c;
+}
+.hero h1 {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { letter-spacing: 2px; }
+  50% { letter-spacing: 6px; }
+}
+
+nav {
+  background: rgba(84, 35, 10, 0.7); /* semi-transparent */
+  backdrop-filter: blur(6px);
+}
+a {
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.btn {
+  display: inline-block;
+  background: #b47f47;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  font-size: large;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #a67c52;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* match your nav height */
+}
+section {
+  scroll-margin-top: 80px; /* works per element */
+}
+
